@@ -24,7 +24,7 @@ until [ $essid != "L" ];do
     sleep 5
 done
 
-nmcli device wifi list ifname $interface | awk '{print $1}' | grep -v 'IN-USE' | grep "$essid" 1> /dev/null || { echo "Rede Não Encontrada...Saindo" && exit 1; }
+nmcli device wifi list ifname $interface | awk '{print $2}' | grep -v 'IN-USE' | grep "$essid" 1> /dev/null || { echo "Rede Não Encontrada...Saindo" && exit 1; }
 
 clear
 
