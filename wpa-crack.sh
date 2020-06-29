@@ -21,7 +21,7 @@ until [ $essid != "L" ];do
     nmcli device wifi list ifname $interface
     echo && read -p "Digite o SSID Da Rede Alvo (L Para Listar Redes Novamente): " essid
     sudo ifconfig $interface down && sudo ifconfig $interface up
-    sleep 5
+    sleep 10
 done
 
 nmcli device wifi list ifname $interface | awk '{print $2}' | grep -v 'IN-USE' | grep "$essid" 1> /dev/null || { echo "Rede Não Encontrada...Saindo" && exit 1; }
