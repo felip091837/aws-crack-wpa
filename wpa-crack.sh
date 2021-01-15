@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #felipesi - 2019
+#tested on Kali Linux
+#need install e config aws cli
 
 sudo systemctl is-active --quiet network-manager.service || { sudo systemctl restart network-manager.service && sleep 15; }
 
